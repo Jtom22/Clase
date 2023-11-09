@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script lang="javaScript">
+      let mapa = new Map();
+      
+
+        
+        mapa.set(createRandomDNI(), { nombre: "Juan " });
+        mapa.set(createRandomDNI(), { nombre: "Marcos " });
+        mapa.set(createRandomDNI(), { nombre: "Lucia" });
+        mapa.set(createRandomDNI(), { nombre: "Alberto " });
+        mapa.set(createRandomDNI(), { nombre: "Eduardo " });
+        mapa.set(createRandomDNI(), { nombre: "Maria " });
+        mapa.set(createRandomDNI(), { nombre: "Alicia " });
+        mapa.set(createRandomDNI(), { nombre: "Matina " });
+        mapa.set(createRandomDNI(), { nombre: "Alejandro " });
+        mapa.set(createRandomDNI(), { nombre: "Jorge " });
+
+        console.log(mapa);
+
+      function createRandomDNI() {
+
+
+        const characters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9' ];
+
+        let dni = '';
+        for (let i = 0; i < 8; i++) {
+        dni += characters[Math.floor(Math.random() * characters.length)];
+        }
+        dni += calculateDNILetter(dni);
+        return dni;
+
+  }
+  function calculateDNILetter(dni) {
+    const letters = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
+    const remainder = dni % 23;
+    return letters[remainder];
+
+  }
+
+
+      
+        
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+console.log("El acceso a la ruta C:\\\\usuario\\ tarda 1\`23\" algo que se considera \"lento\" en la actualidad.");

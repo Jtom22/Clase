@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let vector=[5,34,45,6,7];
+        console.log(vector.length);
+        console.log(typeof(vector));
+        console.log("Mensaje");
+        console["log"]("Mensaje");
+
+        console.log( vector instanceof Array);
+        let conjunto = new Set();
+        console.log(conjunto instanceof Map);
+
+        let notas = new Object();
+        notas.valores=[7,8,9,6,5,4,3];
+        notas.cantidad = notas.valores.length;
+        notas.media= notas.valores.reduce((a,b)=> a+b,0)/notas.cantidad;
+        notas.verMedia = function(){
+            console.log(notas.media);
+        }
+        notas.verMedia();
+        console.log(notas);
+
+        let viaje={
+            origen:"Granada",
+            destino:"Madrid",
+            dias: 5 ,
+            precio: 750,
+
+            mostar:function(){
+                console.log(`${this.origen} /${this.destino}` );
+                console.log(`durante ${this.dias} dias: EUR ${this.precio}`);
+            }
+
+
+        };
+        let oferta = viaje;
+        viaje=null;
+
+        console.log(this);
+        console.log(viaje);
+        console.log(oferta);
+
+        let miViaje = new Viaje("Barcelona","Ibiza",2,12);
+        for (elemento in miViaje) {
+            console.log(elemento);
+            
+        }
+        const padre={
+            saludar: function(){
+                console.log("Hola soy yo");
+
+            }
+        };
+
+        const hijo= Object.create(padre);
+        console.log("Antes de la modificacion: ");
+        hijo.saludar();
+        //Modificamos el saludo en el padre:
+        padre.saludar = function(){
+            console.log("Ya no soy yo");
+
+        }
+        hijo.saludar();
+
+        class Padre{
+            nombre=
+            edad= 
+            constructor(nombre);
+
+        }
+        //Herencia
+        let juanjo = new padre("juan jose", 47);
+        
+        class Hijo extends Padre{
+            constructor(nombre){
+
+            }
+        }
+        let manolin
+
+
+
+
+        
+ 
+    </script>
+</body>
+</html>

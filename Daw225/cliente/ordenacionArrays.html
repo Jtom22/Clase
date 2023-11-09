@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script lang="js">
+    let vector = ["Casado","casa","prueba","zancos","ñam"];
+    vector.sort((primera,segunda)=>primera.length-segunda.length);
+    console.log(vector);
+    vector.sort((primera,segunda)=>primera.localeCompare(segunda,"es"));
+    console.log(vector);
+
+    let vec=[-1,2,-3,4];
+    vec.sort(a,b)=>{console.log(`comparing $(a),$(b), ${(a**2)-(b**2)}`);return ((a**2)-(b**2));};
+    </script>
+
+</body>
+</html>

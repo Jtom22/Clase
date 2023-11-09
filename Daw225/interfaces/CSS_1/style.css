@@ -1,0 +1,12 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+h1{
+    font-family: Cambria, Times, 'Times New Roman', serif;
+    color: #1F497D; ;
+    background-color:#BFBFBF;
+    font-size: 24px;
+    letter-spacing: 0.5em;
+    word-spacing: 1.5em;
+    text-align: center;
+}

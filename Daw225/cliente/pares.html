@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let vector = [5, 7, 3, 1, 4, 9, 22, 6, 8];
+        vector.sort();
+        vector.sort(
+            (primero, segundo)=>{
+
+              if(primero % 2 === 0){
+                    return -1;
+                }
+                else{
+                    return 1;
+                }
+            }
+        );
+
+        vector.sort(
+            (primero, segundo)=>{
+                if((segundo %2 === 0) && (segundo>primero)){
+                    return -1;
+                    }
+                    else{
+                        return 1;
+                    }
+            }
+        );
+        console.info(vector);
+        //por que esta mal y como solucionarlo
+        //Porque no ordena los elementos impares siguiendo el criterio de ordenacion y solo ordena siguiendo el primer elemento de los numeros
+        //Como lo solucionarias?
+        //Con una ordenacion diferente a sort
+
+        vector.sort((a,b)=>{
+         
+            if((a%b==0)&&(b==0)){
+                return a-b;
+                }else if((a%2!=0)&&(b%2!=0)){
+                    return a - b
+                }else if(a%2==0){
+                    return -1;
+                }else{
+                    return 1;
+                }
+
+            }
+        );
+        console.log(vector);
+
+        //Una funcion que cuando la llame ordene un array de mayor a menor
+        //otra funcion distinta que cuando la llame ordene el array de menor a mayor
+        //por que segun voy sacando 
+        let v=[1,2,3,4,5]
+        function F1(vector){
+            
+        return vector.toSorted((a,b)=>{
+         return b-a; 
+        });
+
+            
+        }
+        function F2(vector){
+            
+            return vector.toSorted((a,b)=>{
+             return a-b; 
+            });
+
+              
+        }
+        console.log(v);
+        console.log(F1(v));
+        console.log(F2(v));
+        console.log(v);
+
+        //Escribe una funcion que haciendo uso de filter genere un array a partir de los elementos de otro array que contiene cadenas e caracteres, sin los elementos que contengan tildes
+
+        array=['perro','carpintero','bicho'];
+
+    </script>
+
+
+</body>
+
+</html>

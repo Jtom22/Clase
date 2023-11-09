@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //funcion para numero primo
+        //filter y array que saquen todos los primos
+        let primos;
+        let noPrimos;
+        v=[2,5,6,9,8,6,2,3,4,7,13,21];
+        for (let index = 0; index < v.length; index++) {
+            console.log("el numero "+v[index]+" "+esPrimo(v[index]));
+            
+              primos=v.filter((a)=> esPrimo(a));//filtra los primos a un nuevo array
+              noPrimos=v.filter((a)=> !esPrimo(a));
+            
+            
+        }
+        console.log(primos);
+        console.log(noPrimos);
+
+       
+        let primosSorted=primos.sort(function(a, b){return a - b});
+        let noPrimosSorted=noPrimos.sort(function(a, b){return a - b});
+        console.log(primosSorted);
+        console.log(noPrimosSorted);
+
+
+        
+        function esPrimo(numero) {
+
+            for (var i = 2; i < numero; i++) {
+
+            if (numero % i === 0) {
+                return false;
+            }
+
+            }
+
+            return true;
+        }
+
+    </script>
+
+</body>
+
+</html>

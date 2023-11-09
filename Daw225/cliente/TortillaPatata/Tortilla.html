@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script class="javascript">
+
+
+        class Nevera {
+            //Creo un objeto llamado nevera para poder sacar los ingredientes necesarios
+            //Creo un constructor donde indicamos los ingredientes que hay en la nevera
+                constructor(){
+                    this.huevos=5;
+                    this.cebolla=2;
+                    
+                }
+                //creo un metodo recoger de donde podemos quitar del total el numero de ingredientes que necesito para la receta 
+                 recoger(rec_huevos,rec_cebolla){
+                    if(this.huevos>rec_huevos){
+                        this.huevos=this.huevos-rec_huevos;
+                        return true;
+                    }else{
+                        console.log("No hay suficientes huevos")
+                        return false;
+                        
+                    }
+                    if(cebolla>rec_ceobolla){
+                        nevera.cebolla-rec_cebolla;
+                        return true;
+                    }else{
+                        console.log("No hay suficiente cebollas");
+                        return false;
+ 
+                    }
+                    
+                }
+        }
+        //Es el mismo codigo pero adaptado para este objeto en este caso Utensilios
+        class Utensilios{
+            constructor(){
+                this.cuchillo=2;
+                this.sarten=4;
+                }
+                
+                 recoger(cuchillo,sarten){
+                    console.log("Comprobamos que hay suficientes cuchillos y sartenes")
+                    if(cuchillo>rec_cuchillo){
+                        this.cuchillo-rec_cuchillo;
+                        return true;
+                    }else{
+                        console.log("No hay suficientes cuchillos");
+                        return false;
+
+                    }
+                    if(sarten>rec_sarten){
+                        this.sarten-rec_sarten;
+                        return true;
+                    }else{
+                        console.log("No hay suficientes sartenes")
+                        return false;
+                    }
+                    
+                }
+        }
+        //Es el mismo codigo pero adaptado para este objeto en este caso Almacen
+
+        class Almacen{
+            constructor(){
+                this.aceite=true;
+                this.patatas=3;
+ 
+                }
+                
+                 recoger(rec_aceite,patatas){
+                    if(aceite==true){
+                        return true;
+                    }else{
+                        console.log( "No hay aceite");
+                        return false;
+                       
+                    }
+                    if(patatas>rec_patatas){
+                        this.patatas-patatas;
+                        return true;
+                    }else{
+                        console.log( "No hay suficientes patatas");
+                        return false;
+                    }
+                    
+                }
+        }
+        //Creamos una clase cuyo constructor nos indica nos pide el numero o la existecia de unos ingredientes en concreto
+        class Receta{
+            constructor(huevos,aceite,patatas,cebolla){
+                this.huevos=huevos;
+                this.aceite=aceite;
+                this.patatas=patatas;
+                this.cebolla=cebolla;
+            }
+                
+
+        }
+
+    //Creamos la clase mas importante la cual tiene en su constructor la llamada a varios objetos de donde sacamos los ingredientes
+        class Cocina {
+            constructor(){
+                this.vitro = true;
+                this.nevera = new Nevera();
+                this.utensilios = new Utensilios();
+                this.almacen = new Almacen();
+
+            }
+            //Este metodo es donde utilizamos la receta que hemos creado para haer la tortilla
+            prepararReceta(receta) {
+                const huevo = receta.huevos;
+                const aceite = receta.aceite;
+                const patata = receta.patatas;
+                const cebolla = receta.cebolla;
+            }
+            //Comprobamos que la vitro funciona
+            comprobar(){
+               
+                    if(this.vitro==false){
+                        console.log("La vitro no funciona");
+                        return false;
+                    }else{
+                        console.log("La vitro funciona podemos empezar");
+                        return true;
+                    }
+                    Almacen.recoger(aceite,patata);
+                    Nevera.recoger(huevo,cebolla);
+                    Utensilios.recoger(1,1);
+
+            }
+            //En este metodo es donde "hacemos" la receta y vamos indicando los pasos con un timer para simular que pasa algo de tiempo entre ellos
+            cocinar(){
+                setTimeout(()=>{console.log("Ponemos a calentar el aceite")},300);
+                setTimeout(()=>{console.log("Pochamos la cebolla")},500);
+                setTimeout(()=>{console.log("Ahora batimos los huevos")},700);
+                setTimeout(()=>{console.log("Ponemos las patatas con el huevo y esperamos que funcione")},1200);
+                setTimeout(()=>{ console.log("le damos la vuelta");},1600);
+               
+                setTimeout(()=>{console.log("Esperamos a que se dore por el otro lado")},1800);
+             
+
+            }
+            cocinar2(){
+                setTimeout(()=>{console.log("Ponemos a calentar el aceite")},300);
+                setTimeout(()=>{console.log("Ahora batimos los huevos")},700);
+                setTimeout(()=>{console.log("Ponemos las patatas con el huevo y esperamos que funcione")},1200);
+                setTimeout(()=>{ console.log("le damos la vuelta");},1600);
+               
+                setTimeout(()=>{console.log("Esperamos a que se dore por el otro lado")},1800);
+             
+
+            }
+            //Utilizamos un metodo para poner una valoracion a la tortilla
+             probar(){
+                let num=0;
+                num= getRandomIntInclusive(0,10);
+                setTimeout(()=>console.log("la tortilla tiene una valoracion de "+ num),1900);
+                
+
+             }
+             probar2(){
+
+                setTimeout(()=>console.log("la tortilla tiene una valoracion de "+ 0+ " porque no tiene cebolla"),1900);
+                
+
+             }
+              
+             
+        }
+        //Clase para sacar un numero aleatorio entre dos numero que le pasemos a la hora de llamar al metodo
+        function getRandomIntInclusive(min,max) {
+                //Para el numero aleatorio
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1) + min); 
+            }
+
+        const receta = new Receta(3,true,4,1);
+        const receta2 = new Receta(3,true,4,0);
+        const cocina = new Cocina();
+        let mensaje2 = "¿Quieres cebolla en la tortilla?";
+        let decision = confirm(mensaje2);
+        //Leemos lo que devuelve el confirm y para saber si es o no con cebolla
+        if (decision) {
+            cocina.prepararReceta(receta);
+            if (cocina.comprobar()) {
+            cocina.cocinar();
+            cocina.probar();
+            }else{
+                console.log("No se puede realizar la receta");
+            }
+        }else{
+            cocina.prepararReceta(receta2);
+            if (cocina.comprobar()) {
+            cocina.cocinar2();
+            cocina.probar2();
+            }else{
+                console.log("No se puede realizar la receta");
+            }
+        }
+        
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function reloj(){
+
+            console.log("Ha pasado un segundo");
+        };
+        setInterval(reloj,1000)
+    </script>
+    
+    <script >
+      function GO(){
+        console.log("Se acabo");
+
+      };
+      setTimeout(GO,2000);
+    
+    </script>
+    <button name="elboton" type="button">pinchaaaaaaaaaaa</button>
+    <script>
+        let segundos=0;
+        function segundos(){
+            segundos ++;
+            
+        }
+        setInterval(segundos,1000)
+        function contar() {
+            var botonClick=document.getElementById("elboton");
+            botonClick.onclick=function () {
+                
+                alert("Tocado");
+
+                
+            }
+            setTimeout(contar,1000)
+        }
+
+    </script>
+</body>
+</html>

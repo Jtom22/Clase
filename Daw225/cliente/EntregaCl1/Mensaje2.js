@@ -1,0 +1,1 @@
+document.write("Te he dicho que no hagas click")

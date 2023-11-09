@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const receta={
+            nombre:"templada de Pulpo",
+            tElaboracion:30,
+            formato:{
+                tapa:"1 persona",
+                media:"2 personas",
+                racion:"4 personas"
+            },
+            ingredientes:['pulpo','patata','mayonesa','huevo','pimentón']
+        };
+        console.log(JSON.stringify(receta));
+        console.log(typeof(JSON.stringify(receta)));
+        console.log(receta.valueOf());
+
+    </script>
+</body>
+</html>

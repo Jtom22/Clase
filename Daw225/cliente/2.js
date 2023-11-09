@@ -1,0 +1,1 @@
+document.write("Codigo JS dentro de HTML");

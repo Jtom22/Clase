@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script lang="javaScript">
+        const map = new Map([
+            [0, 'Manolo'],
+            [1, 'Tzeentch '],
+            [3, 'Slaanesh'],
+            [4, 'Khorne'],
+            [5, 'Nurgle']
+        ]);
+        const sortedMap = new Map([...map.entries()].sort((a, b) => a[1].localeCompare(b[1])));
+
+        for (let [key, value] of sortedMap.entries()) {
+        console.log(`${value}`);
+}
+
+    </script>
+    
+    
+</body>
+</html>

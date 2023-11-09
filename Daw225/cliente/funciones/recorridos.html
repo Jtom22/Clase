@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var a = 5;  
+        //Arrays
+        let vector=[12,334,111,52,98,87,2,45];
+       
+        vector.forEach(function(elemento, posicion){
+            console.log(`Posicion ${posicion}: ${elemento}`);
+            
+        });
+        console.log(vector)
+
+        //conjuntos
+
+        let conjunto= new Set();
+        conjunto.add(12).add(334).add(111).add(52).add(98);
+        conjunto.forEach(function(elemento){
+            console.log(`Elemento: ${elemento}`);
+        });
+
+        //mapas
+        let mapa=new Map();
+        mapa.set('a',12).set('b',334).set('c',-111).set('d',52).set('e',-98);
+        mapa.forEach(function(valor,clave){
+            if(valor<0){
+                console.log(`Clave ${clave} / ${valor}`);
+
+            }
+            
+        });
+    </script>
+</body>
+</html>

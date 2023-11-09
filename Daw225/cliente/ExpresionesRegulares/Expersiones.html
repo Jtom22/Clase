@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//corchete es una de entre las que estan
+
+        //ejemplo
+        console.log("Ejercicio 1A ");
+        let EJ1A = /abc/;
+        console.log(EJ1A.test("abcdefg"));
+        console.log(EJ1A.test("abcde"));
+        console.log(EJ1A.test("abcde"));
+        console.log(EJ1A.test("abc"));
+
+        console.log("Ejercicio 1B ");
+        let EJ1B = /123/;
+        console.log(EJ1B.test("abc123xyz"));
+        console.log(EJ1B.test("define"+"123"));
+        console.log(EJ1B.test("var g =123"));
+
+        console.log("Ejercicio 2A ");
+        let EJ2A = /\W/;
+        console.log(EJ2A.test("cat."));
+        console.log(EJ2A.test("896."));
+        console.log(EJ2A.test("?=+."));
+        console.log(EJ2A.test("abc1"));
+
+        console.log("Ejercicio 2B")
+        let EJ2B = /[cmf]an/;
+        //comprobamos que la primera letra es un c,m o f y luego van un an
+        console.log(EJ2B.test("can"));
+        console.log(EJ2B.test("man"));
+        console.log(EJ2B.test("fan"));
+        console.log(EJ2B.test("dan"));
+        console.log(EJ2B.test("ran"));
+        console.log(EJ2B.test("pan"));
+
+        console.log("Ejercicio 2C")
+        let EJ2C =/[hd]og/;
+        console.log(EJ2C.test("hog"));
+        console.log(EJ2C.test("dog"));
+        console.log(EJ2C.test("bog"));
+
+
+        console.log("Ejercicio 2 D")
+        let EJ2D = /^[A-Z]/;
+        //comprobamos que la primera letra es una mayuscula
+        console.log(EJ2D.test("Ana"));
+        console.log(EJ2D.test("Bob"));
+        console.log(EJ2D.test("Cpc"));
+        console.log(EJ2D.test("aax"));
+        console.log(EJ2D.test("bby"));
+        console.log(EJ2D.test("ccz"));
+
+
+    </script>
+</body>
+</html>

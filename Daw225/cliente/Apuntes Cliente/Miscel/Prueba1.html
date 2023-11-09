@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Perro {
+            #nombre = "blacky";
+            constructor(nombre) {
+                this.#nombre = nombre;
+            }
+
+
+            mostrar() {
+                console.log(`El perro se llama ${this.#nombre}`);
+            }
+
+            #ladrar() {
+                console.log("Ladra ladra");
+                console.log(`El nombre del peroo es ${this.#nombre}`);
+            }
+            llama_ladrido() {
+                this.#ladrar();
+
+            }
+
+        }
+        dobby = new Perro("betun");
+        dobby.mostrar();
+        dobby.llama_ladrido();
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script  lang="js">
+        let mensaje = "Introduce el primer numero";
+let num1 = prompt(mensaje);
+
+let mensaje2 = "Introduce el segundo numero";
+let num2 = prompt(mensaje2);
+let mensaje3 = "Deseas sumar?";
+let respuesta2 = confirm(mensaje3);
+
+if (respuesta2) {
+    let suma;
+    suma = num1+num2;
+    
+    alert(`El resultado es ${suma}`);
+}else{
+    let frase;
+    alert(`El resultado es: ${num1} + ${num2} `);
+    
+}
+
+    </script>
+</body>
+</html>

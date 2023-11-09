@@ -1,0 +1,35 @@
+body{
+    margin:0;
+}
+
+div#relativa{
+    background: pink;
+    position: relative;
+    width: 10em;
+    height: 2em;
+    left: 4en;
+}
+div#fija{
+    background: yellow;
+    position: fixed;
+    width: 15em;
+    height: 8em;
+    left: 20em;
+    top: 10em;
+}
+div#absoluta{
+    background: lightblue;
+    position: absolute;
+    width: 8em;
+    height: 3em;
+    left: 1em;
+    top: 2em;
+}
+div#flotante{
+    background: yellow;
+    position: float;
+    width: 15em;
+    height: 3em;
+    float: right;
+}
+

@@ -1,0 +1,264 @@
+
+body{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 1200px;
+    background-color: cornflowerblue;
+    margin-left: 19%;
+   
+}
+li{
+    
+    margin-bottom: 6%;
+    list-style-type: none;
+
+    
+    
+}
+ul>li{
+    display: inline;
+
+}
+
+li>img{
+    float:left;
+    
+}
+h5{
+    font-size: 18px;
+}
+footer{
+    background-color: rgb(168, 168, 168);
+}
+
+.nav{
+    background-color: aqua;
+    font-size: 18px;
+    
+
+}
+
+.cajaFesti1{
+    background-color: rgba(231, 178, 148, 0.979);
+    width: 24%;
+    margin-left: 2%;
+    height: auto;
+    padding: 3%;
+    border-radius: 4%;
+
+}
+.cajaFesti2{
+    background-color: rgba(166, 231, 185, 0.979);
+    width: 24%;
+    margin-left: 2%;
+    padding: 3%;
+    border-radius: 4%;
+
+}
+.cajaFesti3{
+    background-color: rgba(249, 250, 184, 0.979);
+    width: 24%;
+    margin-left: 2%;
+    padding: 3%;
+    border-radius: 4%;
+
+}
+.cajaFesti4{
+    background-color: rgba(175, 220, 247, 0.979);
+    width: 24%;
+    margin-left: 2%;
+    padding: 3%;
+    border-radius: 4%;
+
+}
+.black{
+    font-weight: bold;
+}
+.lightBlack{
+    font-weight:bolder;
+
+}
+.Blue{
+    font-weight: bold;
+    color:rgb(0, 179, 149);
+}
+.Red{
+    font-weight: bold;
+    color:rgb(179, 0, 0)
+}
+.id1{
+    display: inline;
+}
+#program>p{
+    width:84% ;
+   
+}
+#program>img{
+    width: 16%;
+   margin: 1%;
+    /* position: relative;
+    left: 235px; */
+}
+
+#program{
+    background-color: aquamarine;
+    display: flex;
+}
+#registrarse{
+   font-size: 13px;
+
+}
+#cajaTextoFest{
+width: 100%;
+height: auto;
+}
+#contFestival{
+    background-color: blueviolet;
+    display: flex;
+    flex-wrap:wrap ;
+    gap: 10px;
+    
+
+}
+#cont1{
+    background-color: blue;
+    display: flex;
+    align-items: center;
+}
+#cont2{
+    background-color:rgb(153, 98, 216);
+    display: flex;
+    margin: 0.5%;
+}
+#cont3{
+    background-color: red;
+    display: flex;
+    align-items: center;
+}
+#nav1{
+    margin: 0.5%;
+    width: 50%;
+    text-align: right;
+}
+#nav2{
+    margin: 0.5%;
+    width: 58%;
+}
+#idioma{
+    background-color: brown;
+    width: 40%;
+    
+}
+#idioma>input{
+    width:10% ;
+    margin: 0%;
+    background-color: brown;
+}
+
+
+#logo{
+    background-color: aquamarine;
+    width: 50%;
+    margin: 0.5%;
+}
+
+#contGeneral{
+    display: flex;
+    background-color: chocolate;
+}
+#contIzda{
+    margin: 0.5%;
+    width: 890px;
+    background-color: rgba(91, 187, 115, 0.911);
+    margin-right: 5px;
+    
+    
+}
+#contDerecha{
+    margin: 0.5%;
+    width: 300px;
+    align-items: end;
+    background-color: antiquewhite;
+    margin-left: 5px;
+}
+#CajaRegister{
+background-color: rgb(78, 168, 204);
+display: flex;
+align-items: center;
+justify-content: space-around;
+flex-direction: column;
+text-align: center;
+
+
+}
+#regisButt{
+    background-color: rgb(13, 202, 61);
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10%;
+    width: 80%;
+}
+#CajaRegister>p{
+
+    width: 80%;
+    
+}
+
+#CajaListImg{
+    width:  80%;
+    text-align: left;
+    margin-left:5%;
+    padding: 8%;
+    background-color: white;
+    
+}
+#CajaListImg>ol{
+    margin-left: 0;
+    background-color: aliceblue;
+    text-align: left;
+    padding: 8%;
+
+}
+
+#Social{
+    display: flex;
+    justify-content:flex;
+    width: 90%;
+    margin: auto;
+    flex-direction: column;
+    align-items: end;
+}
+#Identi{
+    width:  80%;
+    text-align: center;
+    display: flex;
+}
+#Identi>img{
+    width: 11%;
+}
+#Identi>a{
+    width: 11%;
+    margin-left: 25%;
+    align-self: center;
+}
+#TwButt{
+    width:  80%;
+    text-align: center;
+    display: inline-flex;
+    
+}
+#TwButt>img{
+    width: 11%;
+}
+#TwButt>a{
+    width: 11%;
+    margin-left: 25%;
+    align-self: center;
+}
+#topDiff{
+    margin: 1%;
+    
+}

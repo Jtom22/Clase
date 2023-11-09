@@ -1,0 +1,33 @@
+#azul{
+ background-color:rgb(115, 204, 240);
+ min-height: 60px;
+
+}
+#gris{
+    background-color:rgb(217, 221, 221);
+    min-height: 40px;
+   }
+.amarillo{
+ 
+ display:flex;
+ background-color: rgb(255, 255, 159);
+
+}
+.videos{
+    padding-bottom:0;
+}
+#verde{
+    background-color:rgb(138, 204, 143);
+    min-height: 40px;
+   
+   }
+      
+.dcha{
+    margin-left:auto;
+    width: min-content;
+    background-color: rgb(255, 255, 255);
+}
+.izda{
+    float:left;
+    width: max-content;
+}
