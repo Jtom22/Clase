@@ -1,39 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sudoku</title>
 </head>
+
 <body>
     <script>
-    const sudokuValores = [
-     [5, 3, 4, 6, 7, 8, 9, 1, 2],
-     [6, 7, 2, 1, 9, 5, 3, 4, 8],
-     [1, 9, 8, 3, 4, 2, 5, 6, 7],
-     [8, 5, 9, 7, 6, 1, 4, 2, 3],
-     [4, 2, 6, 8, 5, 3, 7, 9, 1],
-     [7, 1, 3, 9, 2, 4, 8, 5, 6],
-     [9, 6, 1, 5, 3, 7, 2, 8, 4],
-     [2, 8, 7, 4, 1, 9, 6, 3, 5],
-     [3, 4, 5, 2, 8, 6, 1, 7, 9]
-];
+        // Generar un nuevo sudoku válido usando de base el sudoku de arriba
+        const nuevoSu = nuevoSudoku(Sudoku);
+        // Sudoku base
+        const sudokuValores = [
+            [5, 3, 4, 6, 7, 8, 9, 1, 2],
+            [6, 7, 2, 1, 9, 5, 3, 4, 8],
+            [1, 9, 8, 3, 4, 2, 5, 6, 7],
+            [8, 5, 9, 7, 6, 1, 4, 2, 3],
+            [4, 2, 6, 8, 5, 3, 7, 9, 1],
+            [7, 1, 3, 9, 2, 4, 8, 5, 6],
+            [9, 6, 1, 5, 3, 7, 2, 8, 4],
+            [2, 8, 7, 4, 1, 9, 6, 3, 5],
+            [3, 4, 5, 2, 8, 6, 1, 7, 9]
+        ];
 
+        // Función para generar un nuevo sudoku válido mezclando filas y columnas
+        function nuevoSudoku(Sudoku) {
+            let nuevo = copiar(Sudoku);
 
-
-
-        //Clase para sacar un numero aleatorio entre dos numero que le pasemos a la hora de llamar al metodo
-        function getRandomIntInclusive(min,max) {
-                //Para el numero aleatorio
-                min = Math.ceil(min);
-                max = Math.floor(max);
-                return Math.floor(Math.random() * (max - min + 1) + min); 
+            // Realiza intercambios de las filas y columnas un numero de veces aleatoria
+            for (let i = 0; i < getRandomIntInclusive(1, 100); i++) {
+                if (getRandomIntInclusive(0, 1) < 0.5) {
+                    nuevo = CambioFilas(nuevo);
+                } else {
+                    nuevo = CambioColumnas(nuevo);
+                }
             }
-sudokuValores[getRandomIntInclusive(0,9)]=sudokuValores[getRandomIntInclusive(0,9)];
-console.log(sudokuValores);
 
+            return nuevo;
+        }
+
+        // Mostrar el sudoku nuevo en la consola
+        for (let i = 0; i < 9; i++) {
+            let row = "";
+            for (let j = 0; j < 9; j++) {
+                row += nuevoSu[i][j] + " ";
+            }
+            console.log(row);
+        }
+        console.log(Sudoku);
+
+
+        // Función para copiar nuestro sudoku y usarlo de patron para el nuevo
+        function copiar(Sudoku) {
+            return Sudoku.map((row) => [...row]);
+        }
+        // Función para intercambiar dos filas del sudoku
+        function CambioFilas(sudoku) {
+            const nuevo = copiar(sudoku);
+            const numF = getRandomIntInclusive(0, 9) ;
+            const fila1 = numF + getRandomIntInclusive(0, 9);
+            let fila2 = numF + getRandomIntInclusive(0, 9);
+            while (fila1 === fila2) {
+                fila2 = numF + getRandomIntInclusive(0, 9);
+            }
+            [nuevo[fila1], nuevo[fila2]] = [nuevo[fila2], nuevo[fila1]];
+            return nuevo;
+        }
+        // Función para intercambiar dos columnas del sudoku
+        function CambioColumnas(sudoku) {
+            //Copiamos el sudoku para tener los datos de las columnas
+            const nuevo = copiar(sudoku);
+            const numC = getRandomIntInclusive(0, 9) ;
+            const col1 = numCoC + getRandomIntInclusive(0, 9);
+            let col2 = numCoC + getRandomIntInclusive(0, 9);
+            while (col1 === col2) {
+                col2 = numCoC + getRandomIntInclusive(0, 9);
+            }
+            for (let i = 0; i < 9; i++) {
+                [nuevo[i][col1], nuevo[i][col2]] = [nuevo[i][col2], nuevo[i][col1]];
+            }
+            return nuevo;
+        }
+
+        function getRandomIntInclusive(min, max) {
+            //Para el numero aleatorio
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
 
     </script>
-    
 </body>
+
 </html>
