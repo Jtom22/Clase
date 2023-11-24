@@ -7,13 +7,17 @@
 </head>
 <body>
     <h1>Añadir Nueva Cerveza</h1>
-    <form action="insert_cerveza.php" method="post">
+    <form action="insert_cerveza.php" method="post" enctype="multipart/form-data">
         
         <label for="nombre">Nombre de la cerveza:</label>
         <input type="text" id="nombre" name="nombre" placeholder="Introduce el nombre de la cerveza" required >
 
-        <label for="tipo">Tipo de cerveza:</label>
-        <input type="text" id="tipo" name="tipo" required>
+        <select id="tipo" name="tipo" required>
+            <option value="Tostada">Tostada</option>
+            <option value="Rubia">Rubia</option>
+            <option value="De trigo">De trigo</option>
+            <option value="Negra">Negra</option>
+        </select>
 
         <label for="graduacion_alcoholica">Graduación alcohólica:</label>
         <input type="number" id="graduacion_alcoholica" name="graduacion_alcoholica" required min="0" required max="100">
@@ -24,9 +28,12 @@
         <label for="precio">Precio de la cerveza :</label>
         <input type="text" id="precio" name="precio" required min="0">
 
-        <label for="ruta_imagen">Ruta de la imagen:</label>
-        <input type="text" id="ruta_imagen" name="ruta_imagen">
+        <label for="imagen">Subir imagen:</label>
+        <input type="file" id="imagen" name="imagen" accept="image/*">
 
+        <!-- para añadir un documento tipo pdf(accept) -->
+        <label for="documento">Adjuntar documento (PDF o DOCX, máximo 5 MB):</label>
+        <input type="file" id="documento" name="documento" accept=".pdf, .docx">
         <button type="submit">Añadir Cerveza</button>
     </form>
 </body>

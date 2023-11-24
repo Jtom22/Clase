@@ -5,9 +5,9 @@ require_once 'database.php';
 
 try {
     $pdo=obtenerConexion();
-    $cerves=obtenerCervezas($pdo);
+    $cerves = obtenerCervezas($pdo);
 } catch (PDOException $e) {
-    die("Error al obtener cervezas: " . $e->getMessage());
+    die("Error al obtener usuarios: " . $e->getMessage());
 }
 ?>
 
@@ -16,7 +16,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cervezas</title>
+    <title>Usuarios</title>
 </head>
 <body>
     <?php if (!empty($cerves)): ?>
@@ -24,12 +24,18 @@ try {
         <ul>
             <?php foreach ($cerves as $cerve): ?>
                 <li>
-                    <?php echo isset($cerve['nombre']) ? $cerve['nombre'] : 'Nombre de cerveza no disponible'; ?>
+                    Nombre:<?php echo isset($cerve['nombre']) ? $cerve['nombre'] : 'Nombre de cerveza no disponible'; ?>
                     - 
-                    <?php echo isset($cerve['tipo']) ? $cerve['tipo'] : 'Tipo no disponible'; ?>
+                    Tipo:<?php echo isset($cerve['tipo']) ? $cerve['tipo'] : 'tipo de cerveza no disponible'; ?>
+                    -
+                    Graduacion:<?php echo isset($cerve['graduacion_alcoholica']) ? $cerve['graduacion_alcoholica'] : 'graduacion de la cerveza no disponible'; ?>
+                    -
+                    Pais:<?php echo isset($cerve['pais']) ? $cerve['pais'] : 'pais de origen de la cerveza no disponible'; ?>
                     
                 </li>
                 <img src="<?php echo $cerve['ruta_imagen']; ?>" alt="<?php echo $cerve['nombre']; ?>" width="300">
+                
+
 
                 <!-- //Con esto ponemos boton de cerveza al lado de los elementos -->
                 <a href="delete_cerveza.php?id=<?php echo $cerve['id']; ?>">Eliminar Cerveza</a>
