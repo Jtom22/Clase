@@ -1,0 +1,31 @@
+body{
+    font-size: large;
+    background-color:antiquewhite;
+    
+}
+h1{
+    text-align: center; 
+    font-size: 56px;
+}
+a{
+    text-align: center;
+}
+img{
+    width: 30%;
+    height: 50%;
+    margin-bottom: 2%;
+
+}   
+
+div>a{
+    background-color: rgb(49, 44, 33);
+    margin: 4%;
+    width:33%;
+    border: 2%;
+    border-color: black;
+    color: orange;
+    border-radius: 7%;
+    margin-top: 7%;
+    padding: 2%;
+}
+

@@ -1,0 +1,64 @@
+body{
+    font-size: large;
+    background-color:antiquewhite;
+    
+}
+h1{
+    text-align: center; 
+    font-size: 56px;
+}
+a{
+    text-align: center;
+}
+img{
+    width: 30%;
+    height: 50%;
+
+}   
+
+div>a{
+    background-color: rgb(49, 44, 33);
+    margin: 2%;
+    width:33%;
+    border: 2%;
+    border-color: black;
+    color: orange;
+    border-radius: 7%;
+    margin-top: 7%;
+    padding: 2%;
+}
+
+.galeria{
+    background-color: rgb(49, 44, 33);
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap ;   
+    padding: 2%;
+    margin-left: 10%;
+
+    
+}
+.cerveza{
+    width: 31%;
+    background-color: whitesmoke;
+    border-color: black;
+    border: 1%;
+    margin: 1%;
+    height: 240px !important;
+}
+.generales{
+    text-align: center;
+    margin-top: 2.5%;
+}
+.generales>a{
+    margin-top: 4%;
+    padding: 1.5%;
+}
+#opciones{
+    display: flex;
+    
+}
+#datos{
+    text-align: center;
+    font-size: larger;
+}
