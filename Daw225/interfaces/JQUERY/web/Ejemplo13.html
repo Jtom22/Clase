@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <SCRIPT SRC="HTTPS://CODE.JQUERY.COM/ JQUERY-3.4.1.MIN.JS" TYPE="TEXT/JAVASCRIPT"></SCRIPT> 
+
+    <script>
+        $(document).ready(function(){
+            $("#mostrar_panel").toggle(
+
+        
+            function(e){  
+                $("#panel-oculto").slideDown();
+                $(this).val("Cerrar panel");
+            },
+
+            function (e) {
+
+                $("#panel-oculto").slideUp();
+                $(this).val("Mostrar panel");
+            }
+            );
+        });
+    </script>
+    <style media="screen">
+        #panel-oculto{
+            display:none;position:fixed;
+            top:30px;right:400px;width: 100px;
+            height: 200px; z-index: index 1000;background-color: #222;
+        }
+    </style>
+</head>
+<body>
+    <div id="panel-oculto"></div>
+    <input type="button" id="mostrar_panel" value="Mostrar panel">
+</body>
+</html>

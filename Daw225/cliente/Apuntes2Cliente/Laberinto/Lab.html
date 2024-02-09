@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laberinto con Salto</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        #player {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            transition: transform 0.2s;
+        }
+
+        .wall {
+            position: absolute;
+            background-color: black;
+        }
+
+        #endPoint {
+            position: absolute;
+            background-color: green;
+            width: 50px;
+            height: 50px;
+            right: 0;
+            bottom: 0;
+        }
+
+        #message {
+            position: absolute;
+            font-size: 28px;
+            font-weight: bold;
+            color: rgb(37, 249, 0);
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="player"></div>
+<div id="endPoint"></div>
+<div id="message">¡Laberinto completado!</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const player = document.getElementById('player');
+        const endPoint = document.getElementById('endPoint');
+        const walls = document.querySelectorAll('.wall');
+        const message = document.getElementById('message');
+
+        let playerX = 50;
+        let playerY = 50;
+        let playerSpeed = 10;
+
+        function updatePlayer() {
+            player.style.transform = `translate(${playerX}px, ${playerY}px)`;
+        }
+
+        function checkCollision() {
+            
+            for (const wall of walls) {
+                const rect1 = player.getBoundingClientRect();
+                const rect2 = wall.getBoundingClientRect();
+
+                if (
+                    rect1.x < rect2.x + rect2.width &&
+                    rect1.x + rect1.width > rect2.x &&
+                    rect1.y < rect2.y + rect2.height &&
+                    rect1.y + rect1.height > rect2.y
+                ) {
+                    // Collision detected, jump!
+                  
+                }
+            }
+
+            const playerRect = player.getBoundingClientRect();
+            const endPointRect = endPoint.getBoundingClientRect();
+
+
+            if (
+                playerRect.x < endPointRect.x + endPointRect.width &&
+                playerRect.x + playerRect.width > endPointRect.x &&
+                playerRect.y < endPointRect.y + endPointRect.height &&
+                playerRect.y + playerRect.height > endPointRect.y
+            ) {
+                // Player reached the end point
+                message.style.display = 'block';
+            }
+        }
+
+        function handleKeyPress(event) {
+            //Nos movemos con las flelchas
+            switch (event.key) {
+                case 'ArrowUp':
+                    playerY -= playerSpeed;
+                    break;
+                case 'ArrowDown':
+                    playerY += playerSpeed;
+                    break;
+                case 'ArrowLeft':
+                    playerX -= playerSpeed;
+                    break;
+                case 'ArrowRight':
+                    playerX += playerSpeed;
+                    break;
+            }
+
+            checkCollision();
+            updatePlayer();
+        }
+
+        document.addEventListener('keydown', handleKeyPress);
+
+        // Crear el laberinto y ponemos los los muros con las cordenadas y tamaños
+        
+        const maze = [
+            { x: 100, y: 0, width: 20, height: 200 },
+            { x: 200, y: 100, width: 20, height: 200 },
+            { x: 300, y: 0, width: 20, height: 200 },
+            { x: 400, y: 100, width: 20, height: 200 },
+        ];
+
+        for (const wallInfo of maze) {
+            const wall = document.createElement('div');
+            wall.className = 'wall';
+            wall.style.left = `${wallInfo.x}px`;
+            wall.style.top = `${wallInfo.y}px`;
+            wall.style.width = `${wallInfo.width}px`;
+            wall.style.height = `${wallInfo.height}px`;
+            document.body.appendChild(wall);
+        }
+
+        updatePlayer();
+    });
+</script>
+
+</body>
+</html>

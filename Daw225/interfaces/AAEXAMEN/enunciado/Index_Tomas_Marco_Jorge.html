@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Examen 2ª Ev. parte 1 jQuery</title>
+
+	<!-- NO MODIFICAR LA RUTA -->
+	<script src="jquery-3.4.1.min.js " type="text/javascript"></script>
+
+	<script type="text/javascript">
+		/* COLOQUE AQUÍ EL CÓDIGO JQUERY  */
+
+		//Hacemos click en el boton de pintar
+		$(document).ready(function () {
+		
+				$("#btnPintar").click(function () {
+					$("td").css("background-color", "black");
+					$("#btnPintar").text("Borrar tablero");
+					$("#btnPintar").addClass("Borrartablero");
+				});
+				$("#btnPintar").hasClass.click(function () {
+					$("td").css("background-color", "white");
+					$("#btnPintar").text("Pintar tablero");
+		
+				});
+
+
+			
+
+		// Al hacer click en el id btnSemaforo 
+		$("#btnSemaforo").click(function () {
+
+			// Desactivamos el boton
+			$("#btnSemaforo").attr("disabled", true);
+			// Cambiamos el color de fondo del primer circulo
+			$("#rojo").css("background-color", "red");
+			// Esperamos dos segundos a cambiar de nuevo el color del primer circulo a blanco y 
+			// cambiamos el segundo circulo a amarillo
+			setTimeout(() => {
+				$("#rojo").css("background-color", "white");
+				$("#amarillo").css("background-color", "yellow");
+			}, 2000);
+			// Esperamos dos segundos a cambiar de nuevo el color del segundo circulo a blanco y 
+			// cambiamos el tercer circulo a verde
+			setTimeout(() => {
+				$("#amarillo").css("background-color", "white");
+				$("#verde").css("background-color", "green");
+			}, 4000);
+			// Devolvemos el color blanco a el tercer circulo y activamos de nuevo el boton
+			setTimeout(() => {
+				$("#verde").css("background-color", "white");
+				$("#btnSemaforo").attr("disabled", false);
+			}, 6000);
+
+		});
+
+		})
+
+
+
+	</script>
+
+	<style type="text/css">
+		/* COLOQUE AQUÍ EL CÓDIGO CSS  */
+		h2 {
+			text-align: center;
+		}
+
+		h3 {
+			text-align: center;
+		}
+
+
+		#wrapper {
+			width: 650px;
+			border-width: 5px;
+			border-style: solid;
+			height: 550px;
+			border-color: black;
+			display: flex;
+			align-self: center;
+			/* margin-left:25%; */
+		}
+
+		#uno {
+			width: 425px;
+			text-align: center;
+			margin-top: 10px;
+			margin-left: 10px;
+		}
+
+		#uno>table {
+			border-collapse: collapse;
+		}
+
+		td {
+			height: 50px;
+			width: 50px;
+			border: solid;
+			border-width: 1px;
+			border-color: black;
+
+		}
+
+		/* td::even{
+			background-color: rgb(3, 3, 4);
+		}
+		td::odd{
+			background-color: aliceblue;
+		} */
+
+
+
+
+
+
+		/* CSS ejercicio 2 */
+
+		#dos {
+			width: 180px;
+			height: 400px;
+			margin-right: 10px;
+			margin-top: 90px;
+			text-align: center;
+			margin-left: 2%;
+			border: 1px solid black;
+
+
+
+		}
+
+		.ejercicio2 {
+			width: 80px;
+			height: 80px;
+			margin-bottom: 10px;
+			margin-left: 30%;
+			border: 1px solid black;
+			border-radius: 50%;
+		}
+
+		#btnSemaforo {
+			margin-bottom: 20px;
+
+
+		}
+	</style>
+
+</head>
+
+<body>
+	<!-- EL SIGUIENTE CÓDIGO NO DEBE MODIFICARSE Y EL NOMBRE DE LOS "id" SE RESPETARÁN -->
+	<h2>Examen 2ª evaluación. Parte 1 jQuery</h2>
+
+	<!-- Consigne su nombre y apellidos según formato especificado en la línea siguiente-->
+	<h3>Alumno/a: Apellido1 Apellido2, Nombre</h3>
+
+	<!-- EL SIGUIENTE CÓDIGO NO DEBE MODIFICARSE Y EL NOMBRE DE LOS "id" SE RESPETARÁN -->
+	<div id="wrapper">
+		<div id="uno">
+			<h4>EJERCICIO 1 (2 ptos)</h4>
+			<table>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+			<br>
+			<button id="btnPintar">Pintar tablero</button>
+		</div><!-- FIN EJERCICIO 1 -->
+
+
+		<div id="dos">
+			<h4>EJERCICIO 2 (2,5 ptos)</h4>
+			<div id="rojo" class="ejercicio2"></div>
+			<div id="amarillo" class="ejercicio2"></div>
+			<div id="verde" class="ejercicio2"></div>
+			<br>
+			<button id="btnSemaforo">Iniciar semáforo</button>
+		</div><!-- FIN EJERCICIO 2 -->
+	</div><!-- FIN WRAPPER -->
+</body>
+
+</html>

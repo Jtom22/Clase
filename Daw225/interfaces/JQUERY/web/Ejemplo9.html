@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js " type="text/javascript"></script>
+<script>
+    $(document).ready(function(){
+        $("#boton").click(function() {
+            $("#target").toggle("slow");
+            });
+                    $("#boton").click(function() {
+            $("#target").toggle("slow");
+            });
+            $("#boton1").click(function() {
+                $("#target").toggle("fast");
+            });
+            $("#boton2").click(function() {
+                $("#target").toggle(5000);
+            });
+            $("#boton3").click(function() {
+                $("#target").toggle();
+            });
+      
+    });
+
+
+</script>
+</head>
+<body>
+    
+    <input id="boton" type="boton" value="toggle() con efecto slow">
+    <input id="boton1" type="boton" value="toggle() con efecto fast">
+    <input id="boton2" type="boton" value="toggle() con efecto de 5000 milisegundos">
+    <input id="boton3" type="boton" value="toggle() show o Hide">
+
+    <div id="target" style="width:100px;height: 100px; background-color:red;"></div>
+</body>
+</html>

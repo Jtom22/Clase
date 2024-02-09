@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.8.3.js " type="text/javascript"></script>
+
+    <script>
+        var poner_Rojo= function() {$(this).css("color","rgb(255,0,0)");}
+        var poner_Azul= function() {$(this).css("color","rgb(0,0,255)");}
+    
+        $(document).ready(function() {
+            $("p").toggle(poner_Rojo,poner_Azul);
+        });
+        
+    </script>
+
+    <style media="screen">
+        body{background: #666;}
+    </style>
+</head>
+<body>
+    <p>El texto cambia de color al hacer click</p>
+    
+</body>
+</html>

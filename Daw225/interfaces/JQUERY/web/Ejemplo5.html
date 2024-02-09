@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js " type="text/javascript"></script>
+
+    <style type="text/css">
+        .rojo{color:red;}
+        .grande26{font-size: 26px;}
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $("#boton01").click(function () {
+                $("#parrafo").addClass("rojo");
+            });
+            $("#boton02").click(function () {
+                $("#parrafo").addClass("rojo grande26");
+            });
+            $("#boton03").click(function () {
+                $("#parrafo").removeClass("rojo");
+            });
+            $("#boton04").click(function () {
+                $("#parrafo").removeClass("rojo grande26");
+            });
+        })
+
+    </script>
+</head>
+<body>
+    <p id="parrafo">
+        <element></element>Eliminaciones de estiilos en este párrafo
+    </p>
+    <input type="button" name="boton01" id="boton01" value="Asignar color rojo">
+    <input type="button" name="boton02" id="boton02" value="Asignar texto rojo y tamaño 26 px">
+    <input type="button" name="boton03" id="boton03" value="Eliminar estilo color rojo">
+    <input type="button" name="boton04" id="boton04" value="Eliminar estilo color rojo y el tamaño 26">
+
+
+
+</body>
+</html>

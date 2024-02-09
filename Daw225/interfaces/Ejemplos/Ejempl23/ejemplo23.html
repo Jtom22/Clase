@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js" type="text/javascript"></script>
+
+</head>
+<body>
+    
+    <script>
+        var imagenes=["img/img1.jpg","img/img2.jpg","img/img3.jpg","img/img4.jpg","img/img5.jpg","img/img6.jpg","img/img7.jpg","img/img8.jpg"];
+        
+        var x=0;
+        var timer;
+        var reproducir= function(){
+            if (x>imagenes.length) {
+                x=0;
+            }
+            $("#imagen").attr("src",imagenes[x]);
+            x++;
+            timer=setTimeout('reproducir()',60);
+
+        }
+        var parar=function(){clearTimeout(timer);}
+
+        $(document).ready(function() {
+            reproducir();
+            $("#btn_run").click(function(){
+                reproducir();
+            })
+            $("#btn_stop").click(function(){
+                parar();
+            });
+
+        });
+    </script>
+
+    <style>
+        #cajita{
+            background-color: black;
+            height: 300px;
+            padding-top: 30px;
+        }
+        #imagen{
+            width: 350px;
+            height: 290px;
+
+        }
+    </style>
+    <div id="cajita">
+        <center><img src="" id="imagen"></center>
+    </div>
+    <button id="btn_run">Iniciar animacion</button>
+    <button id="btn_stop">Parar animacion</button>
+</body>
+</html>

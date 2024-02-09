@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<body>
+    
+    <ul id="lista" style="list-style-type: none;">
+        <li>Elemento 1
+            <button onclick=moverArriba(this.parentNode) style="background-color: aqua;">Arriba</button>
+            <button onclick=moverAbajo(this.parentNode) style="background-color: rgb(127, 187, 127);">Abajo</button>
+        </li>
+        <li>Elemento 2
+            <button onclick=moverArriba(this.parentNode) style="background-color: aqua;">Arriba</button>
+            <button onclick=moverArribaAbajo(this.parentNode)  style="background-color: rgb(127, 187, 127);">Abajo</button>
+        </li>
+        <li>Elemento 3
+            <button onclick=moverArriba(this.parentNode) style="background-color: aqua;">Arriba</button>
+            <button onclick=moverAbajo(this.parentNode)  style="background-color: rgb(127, 187, 127);">Abajo</button>
+        </li>
+
+    </ul>
+    
+    <script>
+
+        function moverArriba(elemento) {
+            var lista = document.getElementById('lista');
+        
+            //Comprueba que tiene un elemento anterior
+            if (elemento.previousElementSibling !==null){
+                // Mover el elemento actual antes del elemento anterior
+                lista.insertBefore(elemento, elemento.previousElementSibling);
+            }
+           
+        }
+
+        function moverAbajo(elemento) {
+            var lista = document.getElementById('lista');
+        
+            //Comprueba que tiene otro elemento debajo
+            if (elemento.nextElementSibling!==null) {
+                // Mover el elemento siguiente antes del elemento actual
+                lista.insertBefore(elemento.nextElementSibling, elemento);
+            }
+        }
+    </script>
+    
+</body>
+</html>

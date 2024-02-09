@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .paises {
+
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: greenyellow;
+            margin:1%;
+            padding:2%;
+            width: 25%;
+            height:25%;
+        }
+        .meteo{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(55, 139, 187);
+            color: rgb(233, 233, 232);
+            margin:2%;
+            padding:2%;
+            width: 25%;
+            height:50%;
+
+        }
+
+        #centro {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            width: 400px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div id="centro">
+        <!-- <div id="paises"> </div>
+        <div id="meteo">  </div> -->
+    </div>
+
+    <script>
+        //Creamos el div de los paises
+        function init(array) {
+            // let div = document.getElementById("paises");
+            let ul = document.createElement("ul");
+            let divCentro = document.getElementById("centro");
+            let Div_Paises;
+            for (const iterator of array) {
+                let lista = document.createElement("li");
+                //console.log(iterator[0]);
+                let arrayBien = iterator[0] + ":" + iterator[1];
+                let listaTexto = document.createTextNode(arrayBien);
+                lista.appendChild(listaTexto);
+                ul.appendChild(lista);
+              //El childNode apropiado del divCentro es el 1 para los paises porque el 0 está vacio  
+
+            }
+            Div_Paises = document.createElement("div");
+                Div_Paises.appendChild(ul);
+            //if (div.childNodes[0]) {
+                divCentro.replaceChild(Div_Paises,divCentro.childNodes[0]);
+                console.log(divCentro.childNodes[0].classList.add("paises"));
+                
+
+                // div.removeChild(div.childNodes[1]);
+            //}
+            //div.appendChild(ul);
+            
+                // div.removeChild(div.childNodes[1]);
+            
+
+            //document.body.appendChild(div);
+        }
+
+        //Creamos el div de las metorologias
+        function init2(array) {
+
+            // let div = document.getElementById("meteo");
+            let ul = document.createElement("ul");
+            let divCentro = document.getElementById("centro");
+
+            let lista = document.createElement("li");
+            let texto=document.createTextNode(array);
+            lista.appendChild(texto);
+            ul.appendChild(lista);
+            var Div_Meteo=document.createElement("div");
+            Div_Meteo.appendChild(ul);
+
+              //El childNode apropiado del divCentro es el 2 para los paises porque el 0 está vacio
+            //if (div.childNodes[0]) {
+                divCentro.replaceChild(Div_Meteo,divCentro.childNodes[1]);
+                console.log(divCentro.childNodes[1].classList.add("meteo"));
+                // div.removeChild(div.childNodes[1]);
+            //}
+
+            //document.body.appendChild(div);
+        }
+
+        //Creamos la promesa de los paises
+        async function ServidorPaises() {
+            return new Promise(function (resolve, reject) {
+                //Genera un un acierto y un fracaso dependiendo de si se puede ejecutar la funcion dentro de la promesa( es un callback)
+
+
+                setTimeout(() => {
+                    console.log("entra")
+                    //Cuando se ejecutan el reject o el resolve ya no se sigue ejecutando la funcion
+                    resolve(DevuelveArrayPaises());
+                    reject("Incorrecta");
+                }, random() * 1000);
+            })
+        }
+        function ServidorMeteo() {
+            return new Promise(function (resolve, reject) {
+                //Genera un un acierto y un fracaso dependiendo de si se puede ejecutar la funcion dentro de la promesa( es un callback)
+
+
+                setTimeout(() => {
+                    //Cuando se ejecutan el reject o el resolve ya no se sigue ejecutando la funcion
+                    resolve(DevuelveArrayMeteo());
+                    reject("Incorrecta");
+                }, random(1,4) * 1000);
+            })
+        }
+
+        //Devuelve un array de arrays de arrayss pero con los paises y sus valores
+        function DevuelveArrayPaises() {
+
+            return [["Alemania", Math.random().toFixed(3)], ["España", Math.random().toFixed(3)], ["Holanda", Math.random().toFixed(3)], ["Francia", Math.random().toFixed(3)], ["Gran Bretaña", Math.random().toFixed(3)]];
+        }
+
+        
+        function DevuelveArrayMeteo() {
+            arrayMeteo=["Soleado","Nublado","Lluvioso","Granizando","Tornado"];
+            
+            return arrayMeteo[random(4,0)];
+        }
+
+        function random() {
+            let tiempo = Math.floor((Math.random() * (7 - 2 + 1)) + 2);
+
+            return tiempo;
+        }
+        function random(nummax,nummin) {
+            let valor = Math.floor((Math.random() * (nummax - nummin + 1)) + nummin);
+
+            return valor;
+        }
+
+        function enExito(resultadoFinal) {
+
+            window.onload = init(resultadoFinal);
+
+        }
+        function enFracaso(error) {
+
+            console.log(ERROR`${error}`);
+
+        }
+        function enExito2(resultadoFinal) {
+
+            window.onload = init2(resultadoFinal);
+
+        }
+        function enFracaso2(error) {
+
+            console.log(ERROR`${error}`);
+
+        }
+
+
+        function paises() {
+
+        }
+        // window.onload = init(["alemania", "lucas"]);
+
+
+        setInterval(() => {
+
+            //Borramos el hijo en este caso ol
+            let Conexion =  ServidorPaises();
+            Conexion
+                // .then(asignarEstadoAnimico)
+                //el then crea un acierto y un fracaso independiente de la promesa, este es de si llega
+                .then(enExito, enFracaso)
+
+        }, 5000);
+        setInterval(() => {
+
+            //Borramos el hijo en este caso ol
+
+            let Conexion = ServidorMeteo();
+            Conexion
+                // .then(asignarEstadoAnimico)
+                //el then crea un acierto y un fracaso independiente de la promesa, este es de si llega
+                .then(enExito2, enFracaso2)
+
+        }, 5000);
+        // let Conexion = ServidorPaises();
+
+    </script>
+</body>
+
+</html>

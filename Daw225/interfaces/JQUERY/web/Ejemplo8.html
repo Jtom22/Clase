@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js " type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btn_mostrar").click(function(evento){
+                $("#mensaje").text("mostrando mensaje");
+            });
+
+            $("#btn_ocultar").click(function(evento) {
+                $("#mensaje").text("");
+            });
+            $("#btn_mouseover").mouseover(function(evento) {
+                $(this).val("Estas pasando el raton sobre mi");
+            });
+            $("#btn_mouseover").mouseout(function(evento) {
+                $(this).val("Pasa el raton sobre mi");
+            });
+            $("#campo").focus(function(evento) {
+                $("#resultado").html("El campo de texto tiene el foco");
+            });
+            $("#campo").blur(function(evento) {
+                $("#resultado").html("El campo de ha perdido el foco");
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <input type="button" id="btn_mostrar" value="Mostrar mensaje">
+    <input type="button" id="btn_ocultar" value="Ocultar mensaje">
+
+    <div id="mensaje"></div>
+    <input type="button" id="btn_mouseover" value="Pasa el raton sobre mi">
+    <input type="text" id="campo">
+    <div id="resultado"></div>
+</body>
+</html>

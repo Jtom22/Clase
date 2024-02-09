@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.8.3.js " type="text/javascript"></script>
+    <style>
+        .circulo {
+            background-color: rgb(94, 94, 94);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .circulo2 {
+            background-color: rgb(115, 188, 207);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        li {
+            display: inline-block;
+        }
+
+    </style>
+    <script>
+        var poner_Azul = function () { $(this).css("background-color", "rgb(115, 188, 207)"); }
+        var ponerGris = function () { $(this).css("background-color", "rgb(94, 94, 94)"); }
+
+        $(document).ready(function () {
+
+            $(".circulo").mouseover(ponerGris, poner_Azul);
+            $(".circulo").mouseout(poner_Azul, ponerGris);
+
+
+            $(".botonn").attr("disabled", true);
+            $(".botonn").click(
+                function (e) {
+                    id = $(this).attr('id')
+                    selector = "#circulo-" + id.slice(-1);
+                    $(selector).toggle();
+
+                    $(this).attr("disabled", true);
+
+                }
+            );
+
+            $("#all").click(function () {
+                $(".circulo").show();
+                $(".botonn").attr("disabled", true);
+            });
+
+
+            $(".circulo").click(function (evento) {
+                $(this).toggle();
+
+                id = $(this).attr('id')
+                selector = "#boton-" + id.slice(-1);
+                $(selector).attr('disabled', false);
+
+                $(this).css("display", "none");
+
+            });
+
+
+        });
+
+        // $(".cajita").hover{
+        //     function(e){
+        //         $(this).css.mouseover();
+        //     }
+        // }
+    </script>
+</head>
+
+<body>
+    <div>
+
+        <button id="all">Activate all</button>
+        <button class="botonn" id="boton-1">Activate </button>
+        <button class="botonn" id="boton-2">Activate </button>
+        <button class="botonn" id="boton-3">Activate </button>
+        <button class="botonn" id="boton-4">Activate </button>
+        <button class="botonn" id="boton-5">Activate </button>
+        <button class="botonn" id="boton-6">Activate </button>
+    </div>
+
+    <div>
+        <ol>
+            <li>
+                1<div class="circulo" id="circulo-1"></div>
+
+            </li>
+            <li>
+                2<div class="circulo" id="circulo-2"></div>
+            </li>
+            <li>
+                3<div class="circulo" id="circulo-3"></div>
+            </li>
+            <li>
+                4<div class="circulo" id="circulo-4"></div>
+            </li>
+            <li>
+                5<div class="circulo" id="circulo-5"></div>
+            </li>
+            <li>
+                6<div class="circulo" id="circulo-6"></div>
+            </li>
+        </ol>
+
+    </div>
+
+
+</body>
+
+</html>

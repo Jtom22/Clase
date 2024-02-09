@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Asi se capturan eventos asociados a un <span id="miSpan">elemento</span><HTML></HTML></p>
+    
+</body>
+<script>
+    let miSpan = document.getElementById("miSpan");
+    let veces=0;
+    miSpan.addEventListener("click",()=>{
+        veces++;
+        console.log("El usuario ha hecho ${veces} click en el span");
+    });
+    miSpan.addEventListener("click",(objetoEvento)=>{
+        console.info(obetoEvento.target);
+    })
+</script>
+</html>

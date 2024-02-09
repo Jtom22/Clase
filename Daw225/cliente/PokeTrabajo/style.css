@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+    user-select: none;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    background-color: gray;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: relative;
+}
+
+#opponent {
+    position: relative;
+    top: 0px;
+    /*left: 500px;*/
+    height: 350px;
+    width: 100%;
+}
+
+#myzone {
+    position: relative;
+    height: 350px;
+}
+
+#platform1 {
+    position: absolute;
+    top: 180px;
+    left: 0px;
+    width: 1000px;
+    height: auto;
+}
+
+#platform2 {
+    position: absolute;
+    top: 200px;
+    left: 1050px;
+    width: 700px;
+    height: auto;
+}
+
+#mypokemon {
+    position: absolute;
+    top: 50px;
+    left: 300px;
+    width: 350px;
+    height: auto;
+}
+
+#enemy {
+    position: absolute;
+    top: 50px;
+    left: 1250px;
+    width: 300px;
+    height: auto;
+}
+
+/*
+            --------------------------------------------- UI ZONE ----------------------------------------------------
+            */
+
+#ui {
+    /*border: 10px solid  black;*/
+    height: 290px;
+    width: 100%;
+    display: flex;
+}
+
+#fight {
+    width: 100%;
+    height: 700px;
+}
+
+#infoBox {
+    width: 60%;
+    border: 10px solid blue;
+    background-color: white;
+}
+
+#mainBox {
+    margin: 20px 20px;
+}
+
+#mainText {
+    font-size: 90px;
+}
+
+#attacks {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 20px;
+    display: none;
+}
+
+.attackBox {
+    width: 50%;
+    margin: 20px 0px;
+    padding-left: 30px;
+}
+
+.triangle {
+    position: absolute;
+    width: 20px;
+    height: auto;
+}
+
+#triangle1 {
+    left: 5px;
+    top: 45px;
+}
+
+#triangle2 {
+    left: 575px;
+    top: 45px;
+}
+
+#triangle3 {
+    left: 5px;
+    top: 155px;
+}
+
+#triangle4 {
+    left: 575px;
+    top: 155px;
+}
+
+/*
+            ------------------------------------------------ ACTIONS (RIGHT SIDE) ----------------------------
+            */
+
+#actions {
+    width: 40%;
+    border: 10px solid green;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.actionBox {
+    width: 50%;
+    margin-top: 25px;
+    padding-left: 20px;
+    /*border: 5px solid  pink;*/
+}
+
+.actionText {
+    font-size: 60px;
+}
+
+.selector {
+    position: absolute;
+    box-sizing: border-box;
+    width: 350px;
+    height: 100px;
+    border: 2px solid red;
+    /*z-index: 1001;*/
+}
+
+#selector1 {
+    top: 10px;
+}
+
+#selector2 {
+    top: 10px;
+    left: 370px;
+}
+
+#selector3 {
+    top: 140px;
+    left: 0px;
+}
+
+#selector4 {
+    top: 140px;
+    left: 370px;
+}
+
+/*
+            --------------------------------------- GENERAL ------------------------------------------------------------
+            */
+
+.close {
+    z-index: 1000;
+}
